@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 【替换真实内容入口】title/description/canonical 占位文案；canonical 有效值由 src/content/site.ts 的 siteUrl 启动时写入 -->
+    <meta name="description" content="个人作品、项目与想法的在线名片。" />
+    <link rel="canonical" href="https://nononoyeah.github.io/my-website/" data-static />
+    <title>站主姓名 ｜ 个人品牌站</title>
+    <script>
+      try {
+        var stored = localStorage.getItem("my-website:theme");
+        if (
+          stored === "dark" ||
+          (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {
+        // localStorage 或 matchMedia 不可用时静默跳过，初始为明亮模式
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

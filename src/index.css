@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  /* 与 Navbar 的高度 h-16 联动：锚点定位时的顶部偏移。调整导航高度时需同步本值 */
+  scroll-padding-top: 4rem;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+}
+
+/* 全屏高度：旧浏览器回退 100vh，支持后使用 100svh（移动端地址栏友好） */
+.min-h-hero {
+  min-height: 100vh;
+}
+@supports (min-height: 100svh) {
+  .min-h-hero {
+    min-height: 100svh;
+  }
+}
